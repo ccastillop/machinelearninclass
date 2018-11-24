@@ -1,0 +1,3 @@
+function e = calcula_e(x,y)
+    e = 4.16 + 7.9 * x - y ;
+end
