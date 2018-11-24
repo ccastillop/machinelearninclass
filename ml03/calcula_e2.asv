@@ -1,0 +1,8 @@
+function e = calcula_j(x,y)
+    xa = [ones(5,1) x] ;
+    t = [4.16 7.9]' ;
+    h = xa * t ;
+    w = ones(1,5)*(h-y);
+    j = (1 / (2 * m)) * (w' * w);
+    e = 
+end
