@@ -27,4 +27,13 @@ function RLMV()
     figure;
     plot(1:numel(JHistorico), JHistorico, '-b', 'LineWidth', 2);
     
+    % calculo carretera
+    fprintf('Parámetros calculados (theta): \n');
+    fprintf('%f \n\n', theta);
+    
+    fprintf('El costo para la carretera es: ');
+    NuevoX = [1 2800 500 2 130];
+    NuevoXNormalizado = (NuevoX - [0 mu])./[1 sigma];
+    costo = NuevoXNormalizado * theta;
+    fprintf('%f \n', costo);
 end
