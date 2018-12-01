@@ -52,4 +52,4 @@ pruebaxx = GenerarFeatures(prueba(:,2), prueba(:,3));
 
 probabilidad = FuncionSigmoidal(pruebaxx * theta) * 100;
 fprintf('Un paciente con 0.85 de Test A y 0.4 test B tiene una prob de %f%% de estar enfermo', probabilidad);
-
+fprintf('\nClase %d (0:Sano, 1:Enfermo) \n', PredecirClase(theta, pruebaxx));
