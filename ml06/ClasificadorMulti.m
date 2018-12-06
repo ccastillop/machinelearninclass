@@ -19,5 +19,21 @@ function ClasificadorMulti()
     
     m = length(y);
     
+    n = size(x,2) + 1;
+    x = [ones(m,1) x];
+    thetas = zeros(n, NumeroDeClases);
+    
+    for clase = 1:NumeroDeClases
+        theta = zeros(n,1);
+        [theta, J] = GradienteDescendente(x, y==clase, theta, 0.01, 2000);
+        thetas(:,clase) = theta;
+    end
+    
+    %predicciones
+    pred = FuncionSigmoidal(x * thetas);
+    [u, p] = max(pred,[],2); 
+    mean(double(p==y))
+    
+    save('thetas.mat','thetas');
     
 end
